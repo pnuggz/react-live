@@ -4,13 +4,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 
-const commonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
-  name: 'vendor',
-  minChunks(module) {
-    return module.context && ~module.context.indexOf('node_modules');
-  },
-});
-
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   inject: true,
   template: path.resolve(__dirname, 'index.html'),
@@ -36,18 +29,16 @@ export default (env) => {
 
   const definePlugin = new webpack.DefinePlugin({
     'process.env.NODE_ENV': isDev ? '"development"' : '"production"',
-    'process.env.API_URL': '"http://backend.giftableapp.co"',
+    'process.env.API_URL': '"http://api.dailysportboss.com"',
     'process.env.API_VERSION': '"v1"',
   });
 
   const plugins = isDev ? [
     hotModuleReplacementPlugin,
-    commonsChunkPlugin,
     htmlWebpackPlugin,
     definePlugin,
   ] : [
     cleanWebpackPlugin,
-    commonsChunkPlugin,
     htmlWebpackPlugin,
     definePlugin,
     uglifyJSPlugin,
@@ -83,6 +74,18 @@ export default (env) => {
           use: { loader: 'ignore-loader' },
         },
       ],
+    },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          default: false,
+          commons: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendor",
+            chunks: "all"
+          }
+        }
+      }
     },
     devServer: isDev ? serverConf : {},
     resolve: {
