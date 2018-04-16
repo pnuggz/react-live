@@ -1,16 +1,8 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Navigation from '../components/templates/Navigation'
-import ContestsTable from '../containers/ContestsTable'
-import Signup from '../components/templates/Signup'
-import Login from '../components/templates/Login'
+import ContestsTable from '../../containers/ContestsTable'
+import Navigation from '../templates/Navigation'
 
-import {  
-  checkIndexAuthorization,
-  checkAppAuthorization,
-} from '../lib/check-auth'
-
-const Home = () => (
+const HomePage = () => (
   <div>
     <Navigation />
   <div id='homepage' className='container-fluid main-container'>
@@ -64,56 +56,4 @@ const Home = () => (
   </div>
 );
 
-const About = () => (
-  <div>
-    About
-  </div>
-);
-
-const AboutHome = () => (
-  <div>
-    About Home
-  </div>
-);
-
-const AboutChildren = (props) => (
-  <div className="childern">
-    {console.log('childern', props)}
-    {props.title}
-    {props.path}
-  </div>
-);
-
-const AboutInfo = (props) => (
-  <div>
-    {console.log('info', props)}
-    <AboutChildren
-      title="info "
-      path={props.match.path}
-    />
-  </div>
-);
-
-const AboutRoutes = (props) => (
-  <Switch>
-    <Route
-      exact={true}
-      path={props.match.path}
-      component={AboutHome}
-    />
-    <Route
-      exact={true}
-      path={`${props.match.path}/info`}
-      component={AboutInfo}
-    />
-    <Route
-      exact={true}
-      path={`${props.match.path}/children`}
-      render={(props) => <AboutChildren {...props} title="About Children Direct" />}
-    />
-  </Switch>
-);
-
-
-
-export default Routes;
+export default HomePage;

@@ -10,8 +10,8 @@ export default function configureStore(initialState) {
     rootReducer, 
     initialState, 
     compose(
-      applyMiddleware(sagaMiddleware)
-    // window.devToolsExtension ? window.devToolsExtension() : f => f // add support for Redux dev tools
+      applyMiddleware(sagaMiddleware),
+    window.devToolsExtension ? window.devToolsExtension() : f => f // add support for Redux dev tools
     )
   );
   sagaMiddleware.run(rootSaga);

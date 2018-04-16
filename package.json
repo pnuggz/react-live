@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run css && webpack-dev-server --mode development --progress --colors --env dev --watch --config ./webpack.config.babel.js & nodemon -e scss -x \"npm run css\"",
-    "css": "node-sass --include scss src/styles/styles.scss -o dist"
+    "dev": "npm run css && webpack-dev-server --mode development --progress --colors --env dev --watch --config ./webpack.config.babel.js && nodemon -e scss -x \"npm run css\"",
+    "css": "node-sass --include-path scss src/styles/styles.scss -o dist",
+    "start": "npm-run-all --parallel server scss",
+    "server": "webpack-dev-server --mode development --progress --colors --env dev --watch --config ./webpack.config.babel.js",
+    "scss": "nodemon -e scss -x \"npm run css\""
   },
   "author": "",
   "license": "ISC",
@@ -14,15 +17,18 @@
     "clean-webpack-plugin": "^0.1.19",
     "lodash": "^4.17.5",
     "node-sass": "^4.8.3",
+    "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-spinners": "^0.3.2",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
+    "redux-form": "^7.3.0",
     "redux-saga": "^0.16.0",
     "redux-saga-effects": "^1.1.0",
     "webpack-cli": "^2.0.14"

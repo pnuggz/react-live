@@ -1,0 +1,166 @@
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.table-lobby-thead {
+  display: block;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.table-lobby thead th {
+  display: inline-block;
+  float: left;
+  color: #ffffff;
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+  width: 14%;
+  padding: 8px, 8px, 8px, 9px;
+}
+
+table thead tr th {
+  border: none;
+}
+
+// .table>caption+thead>tr:first-child>th, .table>caption+thead>tr:first-child>td, 
+// .table>colgroup+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, 
+// .table>thead:first-child>tr:first-child>th, .table>thead:first-child>tr:first-child>td {
+//   border-top: 0;
+// }
+
+// .table>thead>tr>th {
+//   vertical-align: bottom;
+//   border-bottom: 2px solid #ddd;
+// }
+
+// .table>thead>tr>th, .table>thead>tr>td, .table>tbody>tr>th, 
+// .table>tbody>tr>td, .table>tfoot>tr>th, .table>tfoot>tr>td {
+//   padding: 8px;
+//   line-height: 1.42857143;
+//   vertical-align: top;
+//   border-top: 1px solid #ddd;
+// }
+
+.table-lobby thead th>h5.circular-header {
+  border: 1px solid #ff971f;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  padding: 2px;
+}
+
+.table-lobby thead th:first-child {
+  width: 29%;
+}
+
+.table-lobby thead th:last-child {
+  width: 15%;
+}
+
+.table-lobby tbody tr {
+  background-image: url("/assets/contest_bar.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  box-shadow: inset 2px 2px 2px #006071, inset -2px -3px 2px black;
+  -moz-box-shadow: inset 2px 2px 2px #006071, inset -2px -3px 2px black;
+  -webkit-box-shadow: inset 2px 2px 2px #006071, inset -2px -3px 2px black;
+  width: 100%;
+}
+
+.table-lobby tbody tr.table-lobby-tbody {
+  display: table;
+  height: auto;
+  min-height: 150px;
+  margin-bottom: 20px;
+}
+
+.table-lobby tbody td {
+  display: table-cell;
+  width: 14%;
+  color: #ffffff;
+  vertical-align: middle;
+  border: none;
+  border-right: 0.5px solid rgba(0,0,0,0.3);
+  font-weight: normal;
+}
+
+.table-lobby tbody td:first-child {
+  width: 29%;
+}
+
+.table-lobby tbody .value {
+  @media (min-width: 1170px) {
+    font-size: 12px;
+  };
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 100%;
+  text-align: left;
+  padding: 0px 7px 0px 7px;
+}
+
+.value-league {
+  font-weight: bold;
+}
+
+.table-lobby tbody .value-name {
+  @media (min-width: 1170px) {
+    font-size: 14x;
+    text-align: left;
+    float: left;
+  };
+  padding: 0px 7px 0px 7px;
+  text-align: left;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.table-lobby tbody .value-entry-max {
+  @media (min-width: 1170px) {
+    font-size: 12px;
+  };
+  padding: 0px 7px 0px 7px;
+  text-align: left;
+  text-decoration: none;
+  font-weight: normal;
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 100%;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+.table-lobby tbody .value-big {
+  @media (min-width: 1170px) {
+    font-size: 14px;
+  }
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+
+
+
+

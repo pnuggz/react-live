@@ -6,7 +6,7 @@
       {
         "targets": {
           "browsers": [
-            "last 2 Chrome versions"
+            "last 2 versions"
           ],
           "node": "6.9"
         }
