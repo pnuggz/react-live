@@ -22,6 +22,7 @@ class Login extends Component {
   }
 
   render () {
+
     // grab what we need from props.  The handleSubmit from ReduxForm
     // and the pieces of state from the global state.
     const {

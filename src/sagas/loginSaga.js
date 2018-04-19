@@ -8,7 +8,7 @@ export function* logout() {
   yield put(unsetClient())
 
   // remove our token
-  localStorage.removeItem('userInfo')
+  sessionStorage.removeItem('userInfo')
 
   // redirect to the /login screen
   history.push('/login')
@@ -39,7 +39,7 @@ export function* loginRequest(action) {
 
     console.log('setting local storage')
 
-    localStorage.setItem('userInfo', JSON.stringify(userInfo))
+    sessionStorage.setItem('userInfo', JSON.stringify(userInfo))
 
     console.log('all set')
 

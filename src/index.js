@@ -9,6 +9,7 @@ import 'babel-polyfill';
 import HomePage from './components/pages/HomePage'
 import Signup from './components/templates/Signup'
 import Login from './components/templates/Login'
+import Draft from './containers/Draft'
 
 import {  
   checkIndexAuthorization,
@@ -35,6 +36,11 @@ ReactDOM.render(
         <Route
           path='/login'
           component={Login}
+          onEntry={checkIndexAuthorization(store)}
+        />
+        <Route
+          path='/draft'
+          component={Draft}
           onEntry={checkIndexAuthorization(store)}
         />
       </Switch>
